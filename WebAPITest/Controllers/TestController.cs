@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ApplicationLogic;
 
 namespace WebAPITest.Controllers
 {
@@ -15,9 +16,9 @@ namespace WebAPITest.Controllers
         //public int inputStandard { get; set; }
 
         [HttpGet]
-        public int Get([FromQuery] int input)
+        public string Get([FromQuery] int repeats, [FromQuery] string word)
         {
-            return input + 1;
+            return Class1.StringRepeat(repeats, word);
         }
 
         [HttpDelete]
